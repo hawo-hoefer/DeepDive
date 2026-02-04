@@ -15,12 +15,10 @@ Of course, no one project will serve all levels of expertice since your needs ma
 
 The notebook is hosted on [binder](https://mybinder.org/v2/gh/hawo-hoefer/DeepDive/HEAD?urlpath=%2Fdoc%2Ftree%2FDeepDive.ipynb)
 
-![QR_Binder.gif](./QR_Binder.gif)
+![QR_Binder.gif](./graphics/QR_Binder.gif)
 
 ### Built With
 
 * [PyTorch](https://pytorch.org/)
 * [Jupyter Notebook](https://jupyter.org/)
 * [binder](https://mybinder.org/)
-
-
