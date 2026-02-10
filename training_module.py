@@ -20,7 +20,7 @@ class TrainingModule(L.LightningModule):
         x, y = batch
         y_pred = self.model(x)
         metric_value = self.metric(y_pred,y)
-        self.log("validation_metric", metric_value,prog_bar=True)
+        self.log("validation_metric", metric_value,prog_bar=False)
         return metric_value
 
     def configure_optimizers(self):

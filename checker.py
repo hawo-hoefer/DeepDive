@@ -69,10 +69,10 @@ def test_normalize(x, x_norm):
 def test_neural_network(marvin):
     try:
         assert (
-            marvin(torch.rand(1, 28, 28)).max() <= 1.0
+            marvin(torch.rand(1, 1, 28, 28)).max() <= 1.0
         ), f"Output is not in the range 0-1. Check your output function"
         assert (
-            marvin(torch.rand(1, 28, 28)).max() >= 0.0
+            marvin(torch.rand(1, 1, 28, 28)).max() >= 0.0
         ), f"Output is not in the range 0-1. Check your output function"
         assert (
             sum(p.numel() for p in marvin.parameters()) == 7850
@@ -136,7 +136,7 @@ def submit_score(model, username, password, checkpoint_path="marvin.ckpt"):
     )
     x_test = mnist_testset.data.numpy()
     x_test_normalized = x_test / 255.0
-    x_test_normalized = x_test_normalized.reshape(-1, 28, 28, 1)
+    x_test_normalized = x_test_normalized.reshape(-1, 1, 28, 28)
     # To work with PyTorch we also need to convert our numpy arrays to tensors.
     x_test_normalized = torch.from_numpy(x_test_normalized).float()
     predictions = model(x_test_normalized)
