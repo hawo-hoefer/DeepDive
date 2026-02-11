@@ -13,7 +13,7 @@ class TrainingModule(L.LightningModule):
         x, y = batch
         y_pred = self.model(x)
         loss = self.loss(y_pred,y)
-        self.log("train_loss", loss)
+        self.log("train_loss", loss, prog_bar=True)
         return loss
     
     def validation_step(self, batch, batch_idx):
